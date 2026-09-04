@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 #board {
@@ -22,7 +22,7 @@ body {
     border: 4px solid #2c3e50;
     border-radius: 10px;
     background-color: #fff;
-    overflow: hidden;
+    position: relative;
 }
 
 .cell {
@@ -33,49 +33,41 @@ body {
     align-items: center;
     font-weight: bold;
     font-size: 14px;
-    position: relative;
+    color: #7f8c8d;
 }
 
-/* تلوين المربعات بشكل تبادلي لتبدو كرقعة جذابة */
 .cell:nth-child(even) { background-color: #e8f4f8; }
 .cell:nth-child(odd) { background-color: #fdfbf7; }
 
-/* اللاعب عبارة عن دائرة ملونة */
+#dice-display {
+    font-size: 60px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.rolling {
+    animation: shake 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes shake {
+    0% { transform: rotate(-20deg) scale(0.9); }
+    100% { transform: rotate(20deg) scale(1.1); }
+}
+
 #player {
-    width: 60%;
-    height: 60%;
-    background-color: #e74c3c;
+    width: 70%;
+    height: 70%;
+    background-color: #e67e22;
+    border: 3px solid #fff;
     border-radius: 50%;
     position: absolute;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     z-index: 10;
 }
 
-/* تنسيقات المربع الحواري (Modal) */
-.hidden { display: none !important; }
-
-#quiz-modal {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(44, 62, 80, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
-
-.modal-content {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
 button {
-    padding: 12px 20px;
+    padding: 10px 20px;
     margin: 8px;
     font-size: 16px;
     font-weight: bold;
@@ -89,3 +81,46 @@ button {
 
 button:hover:not(:disabled) { background-color: #2980b9; }
 button:disabled { background-color: #bdc3c7; cursor: not-allowed; }
+.action-btn { background-color: #27ae60; }
+.fail-btn { background-color: #e74c3c; }
+
+.hidden { display: none !important; }
+
+#quiz-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(44, 62, 80, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+#lesson-text {
+    text-align: right;
+    line-height: 1.8;
+    font-size: 15px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-right: 4px solid #3498db;
+    white-space: pre-wrap; /* يحافظ على الفواصل في النصوص */
+}
+
+.badge {
+    background: #f1c40f;
+    color: #2c3e50;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
