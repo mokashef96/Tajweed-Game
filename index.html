@@ -3,29 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أبطال التجويد - السلم والثعبان</title>
+    <title>أبطال التجويد - تحفة الأطفال</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>السلم والثعبان: أبطال التجويد 👑</h1>
+    <h1>السلم والثعبان: رحلة تحفة الأطفال 👑</h1>
     
     <div id="game-container">
-        <!-- رقعة اللعبة سيتم توليدها برمجياً هنا -->
         <div id="board"></div>
         
         <div id="controls">
-            <button id="ask-btn" onclick="showQuestion()">اسحب بطاقة سؤال 📝</button>
-            <button id="dice-btn" onclick="rollDice()" disabled>ارمي النرد 🎲</button>
-            <p id="message">اضغط على سحب بطاقة لتبدأ رحلتك!</p>
+            <div id="dice-display">🎲</div>
+            <button id="ask-btn" onclick="drawCard()">اسحب بطاقة 📝</button>
+            <button id="dice-btn" onclick="rollDice()" disabled>ارمي النرد</button>
+            <p id="message">اضغط على اسحب بطاقة لتبدأ!</p>
         </div>
     </div>
 
-    <!-- مربع السؤال / المراجعة -->
     <div id="quiz-modal" class="hidden">
         <div class="modal-content">
-            <h2 id="lesson-text"></h2>
-            <p id="question-text"></p>
-            <div id="options"></div>
+            <!-- قسم الشرح -->
+            <div id="lesson-section" class="hidden">
+                <h2 id="lesson-title"></h2>
+                <p id="lesson-text"></p>
+                <button id="understand-btn" onclick="showQuestion()" class="action-btn">فهمت، اعرض السؤال 🚀</button>
+                <button id="close-fail-btn" onclick="closeModalAndWait()" class="fail-btn hidden">العودة للرقعة</button>
+            </div>
+            
+            <!-- قسم السؤال المفرَد -->
+            <div id="question-section" class="hidden">
+                <p id="chapter-branch-label" class="badge"></p>
+                <h3 id="question-counter"></h3>
+                <p id="question-text"></p>
+                <div id="options"></div>
+            </div>
         </div>
     </div>
 
