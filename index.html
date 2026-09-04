@@ -7,19 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>السلم والثعبان: رحلة تحفة الأطفال 👑</h1>
+    <h1>السلم والثعبان: رحلة التجويد 👑</h1>
     
     <div id="game-container">
+        <!-- رقعة اللعبة -->
         <div id="board"></div>
         
+        <!-- لوحة التحكم -->
         <div id="controls">
+            <!-- الفهرس الجديد -->
+            <div class="index-container">
+                <label for="lesson-index">فهرس الأحكام:</label>
+                <select id="lesson-index" onchange="jumpToLesson()"></select>
+            </div>
+
             <div id="dice-display">🎲</div>
             <button id="ask-btn" onclick="drawCard()">اسحب بطاقة 📝</button>
             <button id="dice-btn" onclick="rollDice()" disabled>ارمي النرد</button>
-            <p id="message">اضغط على اسحب بطاقة لتبدأ!</p>
+            <p id="message">اختر حكماً من الفهرس أو اسحب بطاقة لتبدأ!</p>
         </div>
     </div>
 
+    <!-- مربع السؤال والشرح -->
     <div id="quiz-modal" class="hidden">
         <div class="modal-content">
             <!-- قسم الشرح -->
@@ -30,11 +39,15 @@
                 <button id="close-fail-btn" onclick="closeModalAndWait()" class="fail-btn hidden">العودة للرقعة</button>
             </div>
             
-            <!-- قسم السؤال المفرَد -->
+            <!-- قسم السؤال (عربي/إنجليزي) -->
             <div id="question-section" class="hidden">
                 <p id="chapter-branch-label" class="badge"></p>
                 <h3 id="question-counter"></h3>
-                <p id="question-text"></p>
+                <!-- النص العربي -->
+                <p id="question-text-ar" class="q-ar"></p>
+                <!-- النص الإنجليزي -->
+                <p id="question-text-en" class="q-en" dir="ltr"></p>
+                
                 <div id="options"></div>
             </div>
         </div>
