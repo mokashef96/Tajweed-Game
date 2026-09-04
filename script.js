@@ -1,28 +1,58 @@
-// المنهج مقسم لأبواب وتفرعات
+// المنهج الثنائي اللغة (عربي / إنجليزي)
 const syllabus = [
     {
         chapter: "أحكام النون الساكنة والتنوين",
         branches: [
             {
-                title: "1. الإظهار الحلقي",
+                title: "1. الإظهار الحلقي (Izhar Halqi)",
                 lesson: "💡 الإظهار الحلقي يعني نطق النون الساكنة بوضوح بدون غنة زائدة إذا جاء بعدها أحد حروف الحلق الستة: (ء، هـ، ع، ح، غ، خ).",
                 questions: [
-                    { q: "كم عدد حروف الإظهار الحلقي؟", options: ["4 حروف", "5 حروف", "6 حروف"], a: "6 حروف" },
-                    { q: "ما هي أول حرفين من حروف الإظهار في التحفة؟", options: ["همز فهاء", "عين فحاء", "غين فخاء"], a: "همز فهاء" },
-                    { q: "ما حكم النون في كلمة (مِنْهُمْ)؟", options: ["إخفاء", "إظهار حلقي", "إدغام"], a: "إظهار حلقي" },
-                    { q: "ما حكم التنوين في (سَمِيعٌ عَلِيمٌ)؟", options: ["إظهار حلقي", "إقلاب", "إدغام"], a: "إظهار حلقي" },
-                    { q: "لماذا سُمي إظهاراً حلقياً؟", options: ["تخرج من الشفتين", "تخرج من الحلق", "تخرج من اللسان"], a: "تخرج من الحلق" }
+                    { 
+                        qAr: "كم عدد حروف الإظهار الحلقي؟", 
+                        qEn: "How many letters are there in Izhar Halqi?",
+                        options: [
+                            { ar: "4 حروف", en: "4 letters" },
+                            { ar: "5 حروف", en: "5 letters" },
+                            { ar: "6 حروف", en: "6 letters" }
+                        ], 
+                        aAr: "6 حروف" 
+                    },
+                    { 
+                        qAr: "ما حكم النون في كلمة (مِنْهُمْ)؟", 
+                        qEn: "What is the Tajweed rule in the word (Minhum)?",
+                        options: [
+                            { ar: "إخفاء", en: "Ikhfa" },
+                            { ar: "إظهار حلقي", en: "Izhar Halqi" },
+                            { ar: "إدغام", en: "Idgham" }
+                        ], 
+                        aAr: "إظهار حلقي" 
+                    }
                 ]
             },
             {
-                title: "2. الإدغام",
+                title: "2. الإدغام (Idgham)",
                 lesson: "💡 الإدغام هو إدخال النون الساكنة في الحرف الذي بعدها. وحروفه مجموعة في كلمة (يرملون).\nينقسم إلى: إدغام بغنة (ينمو) وإدغام بغير غنة (ل، ر).",
                 questions: [
-                    { q: "ما هي الكلمة التي تجمع حروف الإدغام؟", options: ["قطب جد", "يرملون", "ينمو"], a: "يرملون" },
-                    { q: "ما هي حروف الإدغام بغنة؟", options: ["ينمو", "اللام والراء", "حروف الحلق"], a: "ينمو" },
-                    { q: "ما حكم النون في (مَن يَقُولُ)؟", options: ["إدغام بغير غنة", "إدغام بغنة", "إظهار"], a: "إدغام بغنة" },
-                    { q: "ما حكم النون في (مِن رَّبِّهِم)؟", options: ["إدغام بغير غنة", "إقلاب", "إخفاء"], a: "إدغام بغير غنة" },
-                    { q: "كم عدد حروف الإدغام بغير غنة؟", options: ["حرفان (ل، ر)", "أربعة حروف", "ستة حروف"], a: "حرفان (ل، ر)" }
+                    { 
+                        qAr: "ما هي الكلمة التي تجمع حروف الإدغام؟",
+                        qEn: "Which word gathers the letters of Idgham?",
+                        options: [
+                            { ar: "قطب جد", en: "Qutb Jad" },
+                            { ar: "يرملون", en: "Yarmaloun" },
+                            { ar: "ينمو", en: "Yanmou" }
+                        ], 
+                        aAr: "يرملون" 
+                    },
+                    { 
+                        qAr: "ما هي حروف الإدغام بغنة؟",
+                        qEn: "What are the letters of Idgham with Ghunnah?",
+                        options: [
+                            { ar: "ينمو", en: "Yanmou" },
+                            { ar: "اللام والراء", en: "L & R" },
+                            { ar: "حروف الحلق", en: "Throat letters" }
+                        ], 
+                        aAr: "ينمو" 
+                    }
                 ]
             }
         ]
@@ -31,25 +61,31 @@ const syllabus = [
         chapter: "أحكام الميم الساكنة",
         branches: [
             {
-                title: "1. الإخفاء الشفوي",
+                title: "1. الإخفاء الشفوي (Ikhfa Shafawi)",
                 lesson: "💡 الإخفاء الشفوي: إذا جاء بعد الميم الساكنة حرف (الباء)، تُخفى الميم مع غنة بمقدار حركتين.",
                 questions: [
-                    { q: "ما هو الحرف الوحيد للإخفاء الشفوي؟", options: ["الميم", "الباء", "النون"], a: "الباء" },
-                    { q: "ما حكم الميم في (تَرْمِيهِم بِحِجَارَةٍ)؟", options: ["إظهار شفوي", "إخفاء شفوي", "إدغام"], a: "إخفاء شفوي" },
-                    { q: "هل الإخفاء الشفوي يحتاج إلى غنة؟", options: ["نعم، حركتين", "لا يحتاج لغنة", "غنة 4 حركات"], a: "نعم، حركتين" },
-                    { q: "لماذا سمي شفوياً؟", options: ["لخروج الميم والباء من الشفتين", "لأنه يقرأ بالشفاه فقط", "لخروجه من الحلق"], a: "لخروج الميم والباء من الشفتين" },
-                    { q: "أي من هذه الكلمات بها إخفاء شفوي؟", options: ["يَعْتَصِم بِاللَّهِ", "لَهُم مَّا يَشَاءُونَ", "أَمْ لَمْ تُنذِرْهُمْ"], a: "يَعْتَصِم بِاللَّهِ" }
+                    { 
+                        qAr: "ما هو الحرف الوحيد للإخفاء الشفوي؟",
+                        qEn: "What is the only letter for Ikhfa Shafawi?",
+                        options: [
+                            { ar: "الميم", en: "Meem" },
+                            { ar: "الباء", en: "Baa" },
+                            { ar: "النون", en: "Noon" }
+                        ], 
+                        aAr: "الباء" 
+                    }
                 ]
             }
         ]
     }
 ];
 
-let cIdx = 0; // مؤشر الباب (Chapter)
-let bIdx = 0; // مؤشر التفرع (Branch)
-let qIdx = 0; // مؤشر السؤال (Question)
-let needsLesson = true; // هل يحتاج لعرض الشرح قبل السؤال؟
+let cIdx = 0; 
+let bIdx = 0; 
+let qIdx = 0; 
+let needsLesson = true; 
 let currentPosition = 1;
+let isMoving = false; // لمنع النقر أثناء الحركة
 
 const snakesAndLadders = {
     4: { to: 14, msg: "🪜 سلم الإتقان!" },
@@ -57,6 +93,12 @@ const snakesAndLadders = {
     17: { to: 7, msg: "🐍 تراجع للمراجعة!" },
     20: { to: 38, msg: "🪜 تقدم رائع!" },
     45: { to: 22, msg: "🐍 ركز أكثر!" }
+};
+
+// 1. التهيئة وبناء الفهرس والرقعة
+window.onload = () => {
+    createBoard();
+    populateIndex();
 };
 
 function createBoard() {
@@ -79,17 +121,44 @@ function createBoard() {
     document.getElementById('cell-1').appendChild(player);
 }
 
+function populateIndex() {
+    const select = document.getElementById('lesson-index');
+    select.innerHTML = '';
+    syllabus.forEach((chap, cIndex) => {
+        let optGroup = document.createElement('optgroup');
+        optGroup.label = chap.chapter;
+        chap.branches.forEach((branch, bIndex) => {
+            let opt = document.createElement('option');
+            opt.value = `${cIndex}-${bIndex}`;
+            opt.innerText = branch.title;
+            optGroup.appendChild(opt);
+        });
+        select.appendChild(optGroup);
+    });
+}
+
+// التغيير من الفهرس مباشرة
+function jumpToLesson() {
+    const val = document.getElementById('lesson-index').value;
+    const [c, b] = val.split('-');
+    cIdx = parseInt(c);
+    bIdx = parseInt(b);
+    qIdx = 0;
+    needsLesson = true;
+    document.getElementById('message').innerText = `تم اختيار: ${syllabus[cIdx].branches[bIdx].title}. اسحب بطاقة!`;
+}
+
 function drawCard() {
+    if(isMoving) return;
     if (cIdx >= syllabus.length) {
-        alert("🎉 ختمت جميع أبواب التجويد المتاحة!");
+        alert("🎉 ختمت جميع الأبواب!");
         return;
     }
+    // تحديث الفهرس ليعكس المكان الحالي تلقائياً
+    document.getElementById('lesson-index').value = `${cIdx}-${bIdx}`;
     
-    if (needsLesson) {
-        showLessonUI(false);
-    } else {
-        showQuestion();
-    }
+    if (needsLesson) showLessonUI(false);
+    else showQuestion();
 }
 
 function showLessonUI(isRetry) {
@@ -98,7 +167,7 @@ function showLessonUI(isRetry) {
     
     let textToShow = branchData.lesson;
     if (isRetry) {
-        textToShow = "❌ إجابة خاطئة! راجع الحكم ثم حاول في الدور القادم:\n\n" + textToShow;
+        textToShow = "❌ إجابة خاطئة! راجع الحكم:\n\n" + textToShow;
         document.getElementById('understand-btn').classList.add('hidden');
         document.getElementById('close-fail-btn').classList.remove('hidden');
     } else {
@@ -107,7 +176,6 @@ function showLessonUI(isRetry) {
     }
     
     document.getElementById('lesson-text').innerText = textToShow;
-    
     document.getElementById('lesson-section').classList.remove('hidden');
     document.getElementById('question-section').classList.add('hidden');
     document.getElementById('quiz-modal').classList.remove('hidden');
@@ -119,16 +187,20 @@ function showQuestion() {
     const questionData = branchData.questions[qIdx];
     
     document.getElementById('chapter-branch-label').innerText = `${chapterData.chapter} - ${branchData.title}`;
-    document.getElementById('question-counter').innerText = `السؤال ${qIdx + 1} من 5`;
-    document.getElementById('question-text').innerText = questionData.q;
+    document.getElementById('question-counter').innerText = `السؤال ${qIdx + 1} من ${branchData.questions.length}`;
+    
+    // وضع النصوص باللغتين
+    document.getElementById('question-text-ar').innerText = questionData.qAr;
+    document.getElementById('question-text-en').innerText = questionData.qEn;
     
     const optionsDiv = document.getElementById('options');
     optionsDiv.innerHTML = '';
     
     questionData.options.forEach(opt => {
         const btn = document.createElement('button');
-        btn.innerText = opt;
-        btn.onclick = () => checkAnswer(opt, questionData.a);
+        // زر يحتوي على لغتين
+        btn.innerHTML = `<div class="opt-ar">${opt.ar}</div><div class="opt-en" dir="ltr">${opt.en}</div>`;
+        btn.onclick = () => checkAnswer(opt.ar, questionData.aAr);
         optionsDiv.appendChild(btn);
     });
     
@@ -139,37 +211,33 @@ function showQuestion() {
 
 function checkAnswer(selected, correct) {
     if (selected === correct) {
-        // إجابة صحيحة
         document.getElementById('quiz-modal').classList.add('hidden');
         document.getElementById('message').innerText = "✅ إجابة صحيحة! ارمي النرد.";
         
         document.getElementById('ask-btn').disabled = true;
         document.getElementById('dice-btn').disabled = false;
         
-        // تجهيز السؤال القادم
         qIdx++;
         needsLesson = false;
         
-        if (qIdx >= 5) {
+        if (qIdx >= syllabus[cIdx].branches[bIdx].questions.length) {
             qIdx = 0;
             bIdx++;
-            needsLesson = true; // فرع جديد يعني شرح جديد
-            
+            needsLesson = true; 
             if (bIdx >= syllabus[cIdx].branches.length) {
                 bIdx = 0;
                 cIdx++;
             }
         }
     } else {
-        // إجابة خاطئة
-        needsLesson = true; // إجباره على رؤية الشرح
-        showLessonUI(true); // عرض الشرح بنسخة الفشل
+        needsLesson = true; 
+        showLessonUI(true); 
     }
 }
 
 function closeModalAndWait() {
     document.getElementById('quiz-modal').classList.add('hidden');
-    document.getElementById('message').innerText = "لا بأس، حاول مرة أخرى واسحب بطاقة.";
+    document.getElementById('message').innerText = "راجعنا الحكم، اسحب بطاقة للإعادة.";
 }
 
 function rollDice() {
@@ -177,47 +245,71 @@ function rollDice() {
     const diceBtn = document.getElementById('dice-btn');
     
     diceBtn.disabled = true;
+    isMoving = true; // قفل الأزرار أثناء الحركة
     diceDisplay.classList.add('rolling');
     document.getElementById('message').innerText = "جاري رمي النرد...";
     
     setTimeout(() => {
         diceDisplay.classList.remove('rolling');
         const diceValue = Math.floor(Math.random() * 6) + 1;
-        
         const diceIcons = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
         diceDisplay.innerText = diceIcons[diceValue - 1];
         
         document.getElementById('message').innerText = `🎲 حصلت على ${diceValue}!`;
         
-        currentPosition += diceValue;
-        if(currentPosition > 100) currentPosition = 100;
+        let targetPosition = currentPosition + diceValue;
+        if(targetPosition > 100) targetPosition = 100;
         
-        movePlayer(currentPosition);
-        
-        setTimeout(() => {
-            if (snakesAndLadders[currentPosition]) {
-                const jumpData = snakesAndLadders[currentPosition];
-                document.getElementById('message').innerText += ` ${jumpData.msg}`;
-                currentPosition = jumpData.to;
-                movePlayer(currentPosition);
-            }
+        // استدعاء دالة الحركة خطوة بخطوة
+        movePlayerStepByStep(currentPosition, targetPosition, () => {
+            currentPosition = targetPosition;
             
-            if(currentPosition === 100) {
-                document.getElementById('message').innerText = "🎉 مبروووك! لقد وصلت للنهاية!";
-                return; 
-            }
-            
-            document.getElementById('ask-btn').disabled = false;
-            
-        }, 600);
-        
+            // التحقق من السلالم والثعابين بعد وصوله
+            setTimeout(() => {
+                if (snakesAndLadders[currentPosition]) {
+                    const jumpData = snakesAndLadders[currentPosition];
+                    document.getElementById('message').innerText = jumpData.msg;
+                    
+                    movePlayerStepByStep(currentPosition, jumpData.to, () => {
+                        currentPosition = jumpData.to;
+                        isMoving = false;
+                        document.getElementById('ask-btn').disabled = false;
+                    });
+                } else {
+                    if(currentPosition === 100) {
+                        document.getElementById('message').innerText = "🎉 مبروووك! لقد وصلت للنهاية!";
+                    } else {
+                        isMoving = false;
+                        document.getElementById('ask-btn').disabled = false;
+                    }
+                }
+            }, 500);
+        });
     }, 1000);
 }
 
-function movePlayer(position) {
-    const player = document.getElementById('player');
-    const targetCell = document.getElementById(`cell-${position}`);
-    if(targetCell) targetCell.appendChild(player);
+// دالة الحركة خطوة بخطوة بالأنيميشن
+function movePlayerStepByStep(start, end, onComplete) {
+    let current = start;
+    let step = (end > start) ? 1 : -1; // تحديد اتجاه الحركة صعوداً أو نزولاً (في حال الثعبان)
+    
+    let timer = setInterval(() => {
+        if (current !== end) {
+            current += step;
+            const player = document.getElementById('player');
+            const targetCell = document.getElementById(`cell-${current}`);
+            
+            // تأثير القفز
+            player.classList.add('jumping');
+            if(targetCell) targetCell.appendChild(player);
+            
+            setTimeout(() => {
+                player.classList.remove('jumping');
+            }, 150); // إزالة تأثير القفز سريعاً
+            
+        } else {
+            clearInterval(timer);
+            if(onComplete) onComplete();
+        }
+    }, 400); // سرعة الحركة بين كل مربع (400 ملي ثانية)
 }
-
-window.onload = createBoard;
