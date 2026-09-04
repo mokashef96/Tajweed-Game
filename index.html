@@ -15,26 +15,36 @@
         
         <!-- لوحة التحكم -->
         <div id="controls">
-            <!-- الفهرس الجديد -->
-            <div class="index-container">
-                <label for="lesson-index">فهرس الأحكام:</label>
-                <select id="lesson-index" onchange="jumpToLesson()"></select>
+            <!-- الفهرس واختيار البداية -->
+            <div class="setup-container">
+                <div class="control-box">
+                    <label for="lesson-index">فهرس الأحكام:</label>
+                    <select id="lesson-index" onchange="jumpToLesson()"></select>
+                </div>
+                <div class="control-box">
+                    <label for="start-pos">الانتقال لمربع:</label>
+                    <input type="number" id="start-pos" min="1" max="99" value="1">
+                    <button class="small-btn" onclick="setStartPos()">انتقال</button>
+                </div>
             </div>
 
             <div id="dice-display">🎲</div>
             <button id="ask-btn" onclick="drawCard()">اسحب بطاقة 📝</button>
             <button id="dice-btn" onclick="rollDice()" disabled>ارمي النرد</button>
-            <p id="message">اختر حكماً من الفهرس أو اسحب بطاقة لتبدأ!</p>
+            <p id="message">اختر حكماً أو انتقل لمربع معين لتبدأ!</p>
         </div>
     </div>
 
     <!-- مربع السؤال والشرح -->
     <div id="quiz-modal" class="hidden">
         <div class="modal-content">
-            <!-- قسم الشرح -->
+            <!-- قسم الشرح (عربي/إنجليزي) -->
             <div id="lesson-section" class="hidden">
                 <h2 id="lesson-title"></h2>
-                <p id="lesson-text"></p>
+                <div class="lesson-box">
+                    <p id="lesson-text-ar" class="lesson-ar"></p>
+                    <p id="lesson-text-en" class="lesson-en" dir="ltr"></p>
+                </div>
                 <button id="understand-btn" onclick="showQuestion()" class="action-btn">فهمت، اعرض السؤال 🚀</button>
                 <button id="close-fail-btn" onclick="closeModalAndWait()" class="fail-btn hidden">العودة للرقعة</button>
             </div>
@@ -43,9 +53,7 @@
             <div id="question-section" class="hidden">
                 <p id="chapter-branch-label" class="badge"></p>
                 <h3 id="question-counter"></h3>
-                <!-- النص العربي -->
                 <p id="question-text-ar" class="q-ar"></p>
-                <!-- النص الإنجليزي -->
                 <p id="question-text-en" class="q-en" dir="ltr"></p>
                 
                 <div id="options"></div>
